@@ -11,7 +11,7 @@ import useStyles from './style';
          <AppBar position="static">
              <Toolbar className={classes.toolbar}>
                  <Typography varient="h5" className={classes.title}>
-                     Travel Advisor
+                     Hotel Advisor
                  </Typography>
                  <Box display="flex">
                  <Typography varient="h6" className={classes.title}>
