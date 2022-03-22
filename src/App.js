@@ -10,12 +10,12 @@ import PlaceDetails from "./components/PlaceDetails/PlaceDetails";
   
 const App = () => {
     const [places, setPlaces] = useState([]);
-    const [coordinates, setCoodinates] = useState({lat:0 , lng:0});
-    const [bounds, setBounds] = useState( null)
+    const [coordinates, setCoordinates] = useState({lat:0 , lng:0});
+    const [bounds, setBounds] = useState({ sw: 0, ne: 0});
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(({ coords:{latitude, longitude}}) => {
-            setCoodinates({lat: latitude, lng: longitude});
+            setCoordinates({lat: latitude, lng: longitude});
         })
     })
 
@@ -36,7 +36,7 @@ getPlacesData(bounds.sw, bounds.ne).then((data) =>{
             </Grid>
             <Grid item xs={12} md={8}>
                 <Map
-                 setCoodinates = {setCoodinates}
+                 setCoordinates = {setCoordinates}
                  setBounds = {setBounds}
                  coordinates = {coordinates}
                 />
